@@ -157,6 +157,11 @@ You can pass these options to the initialize function to set a custom look and f
         <td>defaultEasing</td>
         <td>Easing function or string with the name of a <a href="http://gsgd.co.uk/sandbox/jquery/easing/" target="_blank">jQuery easing function</a></td>
     </tr>
+    <tr>
+        <td><strong>imagePath</strong></td>
+        <td>https://static-ssl.businessinsider.com/image/59f8dc483e9d25db458b5dfc-2400/gettyimages-645671866.jpg</td>
+        <td>URL of the image to be displayed near the loading bar of the chart.</td>
+    </tr>
 </table>
 
 

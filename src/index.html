@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8"/>
+	<title>Easy Pie Chart With Image</title>
+	<meta name="viewport" content="width=device-width"/>
+	<link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+    <script>
+        function setImageURL(event){
+            chart.options.imagePath = event.target.value;
+        }
+    </script>
+    <input placeholder="Enter Image URL" onchange="setImageURL(event)" />
+    <div class="chart-container">
+        <span class="chart" data-percent="75">
+            <span class="percent"></span>
+        </span>
+    </div>
+	<span class="btn js_update">Update chart</span>
+	<script src="easypiechart.js"></script>
+	<script>
+        var chart;
+	document.addEventListener('DOMContentLoaded', function() {
+		    chart = window.chart = new EasyPieChart(document.querySelector('span'), {
+			easing: 'easeOutElastic',
+			animate: 1500,
+			barColor: '#6aca3f',
+			trackColor: '#fc1a49',
+			scaleColor: true,
+            imagePath: "https://static-ssl.businessinsider.com/image/59f8dc483e9d25db458b5dfc-2400/gettyimages-645671866.jpg",
+			lineWidth: 75,
+			trackWidth: 75,
+            scaleLength: 10,
+			lineCap: 'round',
+			onStep: function(from, to, percent) {
+				this.el.children[0].innerHTML = Math.round(percent);
+			}
+		});
+
+		document.querySelector('.js_update').addEventListener('click', function(e) {
+			chart.update(Math.random()*200-100);
+		});
+        
+	});
+	</script>
+</body>
+</html>
